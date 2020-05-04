@@ -4,6 +4,9 @@ library(readr)
 library(caTools)
 library(glm2)
 library(tidyr)
+library(ROCR)
+library(AUC)
+library(xgboost)
 
 patient <- read.csv(file = '/home/manvi/Documents/Life_long_learning/Projects/Predicting_Mortality_using_BP_in_eICU_dataset/Data/patientData.csv')
 bp <- read.csv(file = '/home/manvi/Documents/Life_long_learning/Projects/Predicting_Mortality_using_BP_in_eICU_dataset/Data/aperiodicNIBPmetrics.csv')
@@ -34,40 +37,48 @@ library(SuperLearner)
 listWrappers()
 
 
-
-#extracting outcome variable from the dataframe
-outcome = dataset$hospitaldischargestatus
-
-#creating dataframe of our exploratory variables
-data = subset(dataset, select = c(MAPstd, gender, age, ethnicity, apacheadmissiondx, admissionheight, admissionweight, unitdischargelocation, ))
-
-# Check structure of our dataframe.
-str(data)
-
 #setting the seed to make the partition reproducible
 set.seed(123)
 
 #splitting the dataset into test and train and validation dataset
-splitSample <- sample(1:3, size=nrow(dataset), prob=c(0.7,0.15,0.15), replace = TRUE)
-train.hex <- dataset[splitSample==1, ]
-valid.hex <- dataset[splitSample==2, ]
-test.hex <- dataset[splitSample==3,]
+#splitSample <- sample(1:3, size=nrow(dataset), prob=c(0.7,0.15,0.15), replace = TRUE)
+#train.hex <- dataset[splitSample==1, ]
+#valid.hex <- dataset[splitSample==2, ]
+#test.hex <- dataset[splitSample==3,]
 
-# X is our training sample.
-x_train = train.hex
+#extracting outcome variable from the dataframe
+outcome = dataset$hospitaldischargestatus
+outcome_bin = as.numeric(outcome)
 
-# Create a holdout set for evaluating model performance.
-# Note: cross-validation is even better than a single holdout sample.
+#creating dataframe of our exploratory variables
+data = subset(dataset, select = c(MAPstd, gender, age, ethnicity, apacheadmissiondx, admissionheight, admissionweight, unitdischargelocation, ))
+
+
+pct = 0.6
+train_obs = sample(nrow(dataset), floor(nrow(data)*pct))
+X_train = data[train_obs, ]
 x_holdout = data[-train_obs, ]
+Y_train = outcome_bin[train_obs]
+Y_holdout = outcome_bin[-train_obs]
 
-# Create a binary outcome variable: towns in which median home value is > 22,000.
-outcome_bin = as.numeric(outcome > 22)
+table(Y_train, useNA = "ifany")
 
-y_train = outcome_bin[train_obs]
-y_holdout = outcome_bin[-train_obs]
 
 #Fit Base Learners
-sl_glm = SuperLearner(Y = test.hex, X = train.hex, family = binomial(), SL.library = "SL.glm")
+
+#GLM
+sl_glm = SuperLearner(Y = Y_train, X = X_train, family = binomial(), SL.library = "SL.glmnet")
+sl_glm
+
+pred_glm = predict(sl_glm, x_holdout)
+
+
+
+#RANDOM FOREST
+sl_randomForest = SuperLearner(Y = Y_train, X = X_train, family = binomial(), SL.library = "SL.randomForest")
+sl_randomForest
+
+pred_random = predict(sl_randomForest, x_holdout)
 
 
 

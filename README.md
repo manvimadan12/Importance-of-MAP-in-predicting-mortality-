@@ -11,6 +11,25 @@ We did some initial analysis to see if the data can provide some insight into th
 We used superlearner package in R to try different algorithms. Random Forest seemed to work best out of all the algorithms we used in terms of accuracy.
 We saw the variable importance clearly idicated that BP was more important than Apache score to predict mortality.
 
+
+# Prerequisites
+[RStudio](https://rstudio.com/)
+
+[R](https://www.r-project.org/)
+
+# Packages Used
+
+arules
+
+You can install the package  from CRAN as follows:
+
+`install.packages("superLearner")`
+
 #Results
 The initial importance validated our hypothesis.
 We made it to the top 10 teams in the Hackathon with our solution.
+
+# License
+[MIT](https://choosealicense.com/licenses/mit/#suggest-this-license)
+
+

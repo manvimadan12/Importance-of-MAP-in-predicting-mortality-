@@ -11,8 +11,8 @@ library(caret)
 library(vimp)
 library(randomForest)
 
-patient <- read.csv(file = '.../Data/patientData.csv')
-bp <- read.csv(file = '.../Data/aperiodicNIBPmetrics.csv')
+patient <- read.csv(file = 'home/manvi/Documents/Life_long_learning/Projects/Predicting_Mortality_using_BP_in_eICU_dataset/Data/patientData.csv')
+bp <- read.csv(file = 'home/manvi/Documents/Life_long_learning/Projects/Predicting_Mortality_using_BP_in_eICU_dataset//Data/aperiodicNIBPmetrics.csv')
 
 dataset <- inner_join( bp, patient, by = c("patientunitstayid" = "patientunitstayid"))
 

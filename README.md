@@ -1,6 +1,8 @@
 # Predicting_Mortality_using_BP_in_eICU_dataset
 [Hack Aotearoa 2020](http://hackaotearoa.co.nz/) - This project was done to address one of the challenges in the datathon organised by the University of Auckland in collaboration with eICU dataset.
 
+# Dataset
+The dataset present here is a pre processed extract that I received from my team while working for the Hachathon.IT is not the complete eICU dataset, nor do I have access to it after the hackathon.
 
 # Hypothesis
 The hypothesis was that blood pressure is a better predictor of mortality than Apache score.

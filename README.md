@@ -11,10 +11,10 @@ There are two files in the present extract:
 The hypothesis was based on the years of experience of an ICU clinician who collaborated with us on the project.The hypothesis was that MAP (Mean Arterial Pressure) is a practical indicator of patient mortality. 
 
 # Methodology
-The clinician believed that the Mean Arterial Pressure taken right before admission to the ICU happened to predict the risk to the health of the patient better that other metrics.
-We did some initial analysis to see if the data can provide some insight into this.
-We used superlearner package in R to try different algorithms. Random Forest seemed to work best out of all the algorithms we used in terms of accuracy.
-We saw the variable importance clearly idicated that BP was more important than Apache score to predict mortality.
+* The clinicians believed that the Mean Arterial Pressure taken right before admission to the ICU happened to predict the risk to the health of the patient better that other metrics.
+* We did some initial analysis to see if the data can provide some insight into this.We considered the demographics of the patient along with the information about the stay of the patient in ICU.
+* We used superlearner package in R to try different algorithms. Random Forest seemed to work best out of all the algorithms we used in terms of accuracy.
+* We saw the variable importance clearly idicated that MAP was a better indicator than othe ethnic parameters to determine mortality.
 
 
 # Prerequisites

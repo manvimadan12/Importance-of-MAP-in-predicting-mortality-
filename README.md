@@ -4,7 +4,7 @@
 # Dataset
 The dataset present here is a pre processed extract that I received from my team while working for the Hachathon.IT is not the complete eICU dataset, nor do I have access to it after the hackathon.
 There are two files in the present extract:
-* [Patient Data]()
+* [Patient Data](https://github.com/manvimadan12/Predicting_Mortality_using_BP_in_eICU_dataset/blob/master/Dataset/patientData.csv)
 * [Periodic Movement of patiet inside ICU](https://github.com/manvimadan12/Predicting_Mortality_using_BP_in_eICU_dataset/blob/master/Dataset/aperiodicNIBPmetrics.csv)
 
 # Hypothesis
@@ -30,9 +30,11 @@ You can install the package  from CRAN as follows:
 
 `install.packages("superLearner")`
 
-#Results
-The initial importance validated our hypothesis.
-We made it to the top 10 teams in the Hackathon with our solution.
+# Results
+The variable importance graph given in the picture below validated our hypothesis. The findings indicate that there is merit in the hypotheiss and it should be investigated further.
+
+We made it to the top 10 teams in the Hackathon with our solution. It can partly attributed to the uniqueness of the hypothesis as we did not use any of the standard questions provided to us during the DAtathon, instead came up with a new hypothesis that leveraged the experience of the clinicians.
+
 
 # License
 [MIT](https://choosealicense.com/licenses/mit/#suggest-this-license)

@@ -1,4 +1,4 @@
-# Predicting_Mortality_using_BP_in_eICU_dataset
+# Importance of MAP in predicting mortality
 [Hack Aotearoa 2020](http://hackaotearoa.co.nz/) - This project was done to address one of the challenges in the datathon organised by the University of Auckland in collaboration with eICU dataset.
 
 # Dataset

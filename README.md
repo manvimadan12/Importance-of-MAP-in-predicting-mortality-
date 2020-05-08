@@ -10,6 +10,7 @@ There are two files in the present extract:
 # Hypothesis
 The hypothesis was based on the years of experience of an ICU clinician who collaborated with us on the project.The hypothesis was that MAP (Mean Arterial Pressure) is a practical indicator of patient mortality. 
 
+
 # Methodology
 * The clinicians believed that the Mean Arterial Pressure taken right before admission to the ICU happened to predict the risk to the health of the patient better that other metrics.
 * We did some initial analysis to see if the data can provide some insight into this.We considered the demographics of the patient along with the information about the stay of the patient in ICU.

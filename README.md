@@ -34,6 +34,9 @@ You can install the package  from CRAN as follows:
 # Results
 The variable importance graph given in the picture below validated our hypothesis. The findings indicate that there is merit in the hypotheiss and it should be investigated further.
 
+![variable importance]()
+
+# Achievement
 We made it to the top 10 teams in the Hackathon with our solution. It can partly attributed to the uniqueness of the hypothesis as we did not use any of the standard questions provided to us during the DAtathon, instead came up with a new hypothesis that leveraged the experience of the clinicians.
 
 

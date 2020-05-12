@@ -39,6 +39,8 @@ The variable importance graph given in the picture below validated our hypothesi
 # Achievement
 We made it to the top 10 teams in the Hackathon with our solution. It can partly attributed to the uniqueness of the hypothesis as we did not use any of the standard questions provided to us during the DAtathon, instead came up with a new hypothesis that leveraged the experience of the clinicians.
 
+# References
+1) Pollard, T. J., Johnson, A. E., Raffa, J. D., Celi, L. A., Mark, R. G., & Badawi, O. (2018). The eICU Collaborative Research Database, a freely available multi-center database for critical care research. Scientific data, 5, 180178.
 
 # License
 [MIT](https://choosealicense.com/licenses/mit/#suggest-this-license)
